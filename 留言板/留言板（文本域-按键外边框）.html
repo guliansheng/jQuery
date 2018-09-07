@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src='js/jquery.js'></script>
+</head>
+<style type="text/css">
+*{
+	margin: 0;
+	padding: 0;
+	font-family: 微软雅黑;
+}
+h1{
+	margin-left: 40px;
+}
+	textarea{
+		width: 1200px;
+		height: 50px;
+		margin-left: 40px;
+		margin-top: 40px;
+		padding: 15px;
+		border-radius: 20px;
+		border: solid 2px #000; 
+		outline: none;/*使留言板外边框消失；*/
+		resize: none;/*限制文本域大小不可改变*/
+		/*同样可以限制大小，更加灵活，设置最大值可拖动，如果最大值就是原来的宽，则无法拖动；
+		max-width: 1200px;
+		max-height: 200px;*/
+	}
+	button{
+		width: 80px;
+		height: 30px;
+		background: #000;
+		border-radius: 15px;
+		color: #fff;
+		outline: none;
+		margin-left: 40px; 
+		margin-top: 40px;
+	}
+	.text{
+		width: 1200px;
+		height: 50px;
+		margin-left: 40px;
+		margin-top: 20px;
+		padding: 15px;
+		border: solid 1px #000;
+		border-radius: 20px;
+		outline: none; 
+		background: #fff;
+	}
+	.close{
+		float: right;
+		font-size: 30px;
+		margin-right: 20px;
+		cursor: pointer;
+	}
+</style>
+<body>
+	<h1>留言板</h1>
+	<textarea></textarea>
+	<p><button>ok</button></p>
+
+</body>
+<script>
+$('textarea').focus(function(){
+	this.value='';
+});
+$('button').click(function(){
+	val=$('textarea').val();
+	// str="<div class='text'>"+val+"</div>";
+	// 用字符串添加到网页中的代码可以执行；	
+	str="<div class='text'>";
+	str+="<div class='close'>&times;</div>";//&times;是叉号的编码；
+	str+=val;
+	str+="<div>";
+	$('body').append(str);
+});
+//事件委派：无论对象是什么时候产生的，都会被添加相应事件；
+$('.close').live('click',function(){
+	$(this).parent().hide(1000,function(){
+		$('body').css({'background':'#000'});
+	});//hide()和show()内部可以写时间和函数，函数在hide和show执行完之后运行；
+});
+</script>
+</html>

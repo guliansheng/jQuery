@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src='jquery.min.js'></script>
+</head>
+<body>
+	<input type="radio">
+	<input type="radio" >
+	<input type="radio" >
+	<input type="radio" >
+	<input type="radio" >
+	<input type="checkbox" >
+	<input type="checkbox" >
+	<input type="checkbox" >
+	<input type="checkbox" >
+	<input type="checkbox" >
+	<input type="checkbox" >
+	<img src="images/1.png">
+	<img src="images/1.png">
+	<img src="images/1.png">
+	<img src="images/1.png">
+	<img src="images/1.png">
+	<img src="images/1.png">
+	<img src="images/1.png">
+	<img src="images/1.png">
+</body>
+<script type="text/javascript">
+	$('input:lt(3):even').attr({'name':'name1'});//小于3开始的偶数
+	$('img:gt(2):odd').attr({'name':'name2'});//索引值大于2的img开始，从零开始数是奇数则添加属性name=‘name2’；
+	$('img')[0].title='jQuery对象转js对象';	//js对象可直接设置默认属性值；
+	$('input[type="checkbox"]').get(2).name='namecheckbox';//get()和[]的效果相同；
+	for(i=3;i<6;i++){
+		$('input[type="checkbox"]')[i].name='name-check'+i;
+	}
+	
+</script>
+</html>

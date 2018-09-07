@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src='js/jquery.js'></script>
+	<style type="text/css">
+		.container{
+			width: 1000px;
+			height: 2500px;
+			background: #ccc;
+			margin: 0 auto;
+		}
+		ul{
+			padding: 0;
+		}
+		ul li{
+			width: 100%;
+			height: 500px;
+			margin-bottom:  20px;
+			background: #cfc;
+			list-style: none;
+		}
+		#lc{
+			width: 30px;
+			height: 180px;
+			position: fixed;
+			top: 200px;
+			left: 20px;
+			cursor: pointer;		
+		}
+		#lc ul{
+			list-style-type: none;
+			width: 30px;
+			height: 180px; 
+		}
+		#lc li{
+			width: 30px;
+			height: 30px;
+			text-align: center;
+			line-height: 30px;
+			border-radius: 30px;
+			font-size: 12px;
+			background: #fcf;
+			color: #000;
+		}
+		#lc .active{
+			background: #0ff;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<ul>
+			<li class="foot"><h1>js</h1><p>js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!</p></li>
+			<li class="foot"><h1>php</h1><p>php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!</p></li>
+			<li class="foot"><h1>bootstrap</h1><p>bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!bootstrap is very good!</p></li>
+			<li class="foot"><h1>linux</h1><p>linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!</p></li>
+		</ul>
+		<div id="lc">
+		<ul>
+			<li>F1</li>
+			<li>F2</li>
+			<li>F3</li>
+			<li>F4</li>
+		</ul>
+	</div>	
+	</div>
+</body>
+<script type="text/javascript">
+$(function () {
+	$(window).scroll(function(){
+		var st=$(window).scrollTop();
+		$('.foot').each(function(){
+			indx=$(this).index('.foot');
+			ot=$(this).offset().top;
+			if(st>=ot-150){
+				$('#lc li').eq(indx).addClass('active');
+				$('#lc li').not($('#lc li').eq(indx)).removeClass('active');
+			}
+		})
+	})
+})
+</script>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="Chinese">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src='jquery.min.js'></script>
+</head>
+<style type="text/css">
+	*{
+		margin: 0px;
+		padding: 0px;
+		font-family: 微软雅黑;
+	}
+	ul,li{
+		list-style:none;
+	}
+	.box{
+		width:600px;
+		margin:40px auto;
+	}
+	.box ul li{
+		position:relative;
+		top:1px;
+		box-sizing:border-box;
+		float:left;
+		margin-left:15px;
+		width:100px;
+		height:30px;
+		line-height:30px;
+		text-align:center;
+		border:1px solid #ccc;
+		cursor: pointer;
+		background: #fff;
+	}
+	.box ul li.select{
+		border-bottom: 1px solid lightskyblue;
+		border-top: 2px solid #444;
+		background:lightskyblue;
+	}
+	.box div{
+		clear:both;
+		height:200px;
+		width:600px;
+		display:none;
+		border:1px solid #ccc;
+		background:lightskyblue;
+		line-height:200px;
+		text-align:center;
+	}
+	.box div.select{
+		display:block;
+	}
+</style>
+<body>
+	<div class="box">
+		<ul>
+		    <li class="select">tab1</li>
+		    <li>tab2</li>
+		    <li>tab3</li>
+		    <li>tab4</li>
+		</ul>
+		<div class="select">内容一</div>
+		<div>内容二</div>
+		<div>内容三</div>
+		<div>内容四</div>
+	</div>
+</body>
+<script type="text/javascript">
+
+</script>
+</html>

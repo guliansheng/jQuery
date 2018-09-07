@@ -1,0 +1,38 @@
+﻿
+*{
+	font-family: 微软雅黑;
+}
+#imgid{
+	position: fixed;
+	right: 40px;
+	bottom: 40px;
+	display: none;
+}
+#main{
+	width: 1200px;
+	height: 5000px;
+	margin: 0 auto;
+}
+#lc{
+width: 30px;
+height: 180px;
+position: fixed;
+top: 200px;
+left: 20px;
+cursor: pointer;
+display: none;			
+}
+#lc ul{
+list-style-type: none;
+width: 30px;
+height: 180px; 
+}
+#lc li{
+width: 30px;
+height: 30px;
+text-align: center;
+line-height: 30px;
+border-radius: 100px;
+font-size: 12px;
+color: #cfcfcf ;
+}

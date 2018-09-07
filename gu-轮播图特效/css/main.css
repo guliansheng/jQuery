@@ -1,0 +1,62 @@
+*{margin: 0px;padding: 0px;}
+.Carousel{
+	width: 1000px;
+	height: 400px;
+	margin:40px auto;
+	background: #ccc;
+	position: relative;
+	cursor: pointer;
+}
+.Carousel-img{
+	width: 1000px;
+	height: 400px;
+}
+.Carousel-img img{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.Pointer-left{
+	width: 30px;
+	height: 50px;
+	line-height: 50px;
+	position: absolute;
+	top: 170px;
+	left: 20px;
+	background: #ccc;
+	opacity: 0.5;
+	font-size: 30px;
+	font-weight: bold;
+	text-align: center;
+	border-radius: 50px;
+}
+.Pointer-right{
+	width: 30px;
+	height: 50px;
+	line-height: 50px;
+	position: absolute;
+	top: 170px;
+	right: 20px;
+	background: #ccc;
+	opacity: 0.5;
+	font-size: 30px;
+	font-weight: bold;
+	text-align: center;
+	border-radius: 50px;
+}
+.Carousel-dot ul{
+	width: 110px;
+	height: 12px;
+	position: absolute;
+	bottom: 25px;
+	left: 460px;
+}
+.Carousel-dot li{
+	width: 12px;
+	height: 12px;
+	border-radius:6px;         
+	float: left;
+	list-style: none;
+	margin-right: 15px; 
+	background: #fff;
+}

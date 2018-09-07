@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #con{
+            width:200px;
+            height:20px;
+            border:1px solid #a9adfa;
+            overflow: hidden;
+            margin:100px auto;
+        }
+        #marquee{
+            width:200px;
+            height:2300px;
+            background:#ccc;
+        }
+        #marquee ul{
+            list-style: none;
+        }
+        #marquee ul li{
+            width:200px;
+            height:20px;
+            padding:2px;
+            font-size:12px;
+        }
+        #marquee ul li img{
+            width:200px;
+            height:194px;
+            border:none;
+        }
+    </style>
+</head>
+<body>
+    <div id="con">
+        <div id="marquee">
+            <ul id="demo">
+                <li>新闻：这是一条新闻</li>
+                <li>头条：这是一个头条</li>
+                <li>案例：这是一条案例</li>
+                <li>方案：这是一条方案</li>
+                <li>规定：这是一条规定</li>
+                <li>新闻：这是一条新闻</li>
+                <li>头条：这是一个头条</li>
+                <li>案例：这是一条案例</li>
+                <li>方案：这是一条方案</li>
+                <li>规定：这是一条规定</li>
+                <li>新闻：这是一条新闻</li>
+                <li>头条：这是一个头条</li>
+                <li>案例：这是一条案例</li>
+                <li>方案：这是一条方案</li>
+                <li>规定：这是一条规定</li>
+            </ul>
+            <ul id="demo1"></ul>
+        </div>
+    </div>
+</body>
+</html>
+<script src="jQuery/jquery-3.1.1.min.js"></script>
+<script>
+    $(function(){
+        var con = $('#con');
+        var demo= $('#demo');
+        var demo1=$('#demo1');
+        demo1.html(demo.html());
+        function scrollDiv(){
+            if(con.scrollTop()>demo.height()){
+                con.scrollTop(0);
+            }else{
+                var cLeft = con.scrollTop()+1;
+                con.scrollTop(cLeft);
+            }
+        }
+        var marquee = setInterval(scrollDiv,80);
+        con.hover(function(){
+        	clearInterval(marquee);
+        },function(){
+        	marquee = setInterval(scrollDiv,80);
+        });
+    })
+</script>

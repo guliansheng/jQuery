@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src='jquery.min.js'></script>
+	<style type="text/css">
+		.menu{
+			width: 300px;
+			height: 30px;
+			margin: 10px auto;
+			background: #ccc;
+			font-size: 20px;
+		}
+	</style>
+	<script type="text/javascript">
+	$(function () {
+		$('.menu').eq(2).css({'width':200+'px'});
+		$('button').click(function(){
+			//利用条件设置css属性值，可控制index和oldValue来控制要改变的对象。
+			$('.menu').css('background',function(index,oldValue){
+				if(index%2==0){
+					return '#fcf';
+				}	
+				else if(index==3){
+					return '#ffc';
+				}	
+			});
+			$('.menu').css('height',function(){
+				return '50px';
+			})
+			
+			$('.menu').css('width',function(index,oldValue){
+				if(oldValue=='200px'){
+					return '150px';
+				}
+			})
+		});
+		
+	})
+	</script>
+</head>
+<body>
+	<div class="menu">aaaaaaaaaaaaa</div>
+	<div class="menu">bbbbbbbbbbbbb</div>
+	<div class="menu">aaaaaaaaaaaaa</div>
+	<div class="menu">aaaaaaaaaaaaa</div>
+	<button>OK</button>
+</body>
+</html>

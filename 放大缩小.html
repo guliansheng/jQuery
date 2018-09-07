@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery.min.js"></script>
+</head>
+<style type="text/css">
+.kuang{
+	width: 400px;
+	height: 400px;
+	background: #ccc;
+}
+</style>
+<body>
+	<div class="kuang">
+		<button>放大</button>
+	</div>
+</body>
+<script type="text/javascript">
+$('button').toggle(
+	function(){
+		$('.kuang').stop().animate({
+			'width':'1000px',
+			'height':'2000px'
+		},1000)
+
+},function(){
+	$('.kuang').stop().animate({
+			'width':'100px',
+			'height':'200px'
+		},1000)
+})
+</script>
+</html>

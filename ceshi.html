@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<script type="text/javascript" src='jquery.min.js'></script>
+</head>
+<body>
+	<div id="tid">
+		<h1>bbbbbbbbbbbbbbbb</h1>
+		<h1>bbbbbbbbbbbbbbbb</h1>
+		<h1>bbbbbbbbbbbbbbbb</h1>
+	</div>
+	<h1><p>aaaaaaaaaaaaaaaaaaaaaaa</p></h1>
+	<h1>aaaaaaaaaaaaaaaaaaaaaaa</h1>
+	<h1>bbbbbbbbbbbbbbbbbbbbbbb</h1>
+	<h1>aaaaaaaaaaaaaaaaaaaaaaa</h1>
+	<h1>aaaaaaaaaaaaaaaaaaaaaaa</h1>
+	<h1></h1>
+	<button>ok</button>
+	<button>off</button>
+	<button>h1poff</button>
+</body>
+<script type="text/javascript">
+$('h1:first').css({'color':'#0f0'});
+$('h1:empty').html('xxxxxxxxxx');
+$('h1:eq(3)').css({'color':'#f0f'});
+$('h1 p').html('ssssssssssss');
+$('h1:eq(1)+h1').css({'color':'#f00'});
+$('#tid h1').css({'color':'#0f0'});
+$('button').eq(0).click(function(){
+	$('h1').css({'color':'#ccc'});
+})
+$('button').eq(1).dblclick(function(){
+	$('button').eq(0).off('click');
+})
+$('p').attr({'name':'attrname'});
+$('button').eq(2).click(function(){
+	$('p').removeAttr('name');
+})
+</script>
+</html>
